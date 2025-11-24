@@ -31,7 +31,7 @@ async function getAllKomik(database) {
 
 async function getKomikById(database, id) {
     const komik = await database.Komik.findByPk(id);
-    if (!komik) throw new Error("Komik tidak ditemukan");
+    if (!komik) { throw new Error("Komik tidak ditemukan"); }
 
     if (komik.imageData) {
         komik.imageData = komik.imageData.toString('base64');
